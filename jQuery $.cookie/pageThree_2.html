@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageThree_2</title>
+  <!--使用cookie-->
+  <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+<body>
+  <h1 style="text-align: center">jQuery cookie 获取参数</h1>
+  <button class="BUTTON">点击获取cookie参数！</button>
+</body>
+<script>
+  let passParam = $.cookie('passData');
+
+  let button = document.getElementsByClassName('BUTTON')[0];
+  button.onclick = function () {
+    alert(passParam)
+  }
+</script>
+</html>

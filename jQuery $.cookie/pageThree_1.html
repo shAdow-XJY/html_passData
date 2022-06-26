@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageThree_1</title>
+
+    <!--使用cookie-->
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center">jQuery $.cookie 保存参数</h1>
+    <button class="BUTTON">点击去第二个页面看是否能获取cookie参数！</button>
+</body>
+<script>
+    $.cookie('passData','我就是传递过来的参数')
+
+    let button = document.getElementsByClassName('BUTTON')[0];
+    button.onclick = function () {
+        window.location.href = encodeURI('./pageThree_2.html')
+    }
+</script>
+</html>

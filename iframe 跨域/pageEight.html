@@ -1,0 +1,38 @@
+1. 通过iframe 的 src 进行URL传值
+2. 通过postMessage(data,origin),传值
+   origin为 * 任意窗口;为 / 同源窗口;或者指定 协议+主机+端口号
+
+a.html：(www.domain1.com/a.html)
+<iframe id="iframe" src="http://www.domain2.com/b.html" style="display:none;"></iframe>
+<script>
+    var iframe = document.getElementById('iframe');
+    iframe.onload = function() {
+        var data = {
+            name: 'aym'
+        };
+        // 向domain2传送跨域数据
+        iframe.contentWindow.postMessage(JSON.stringify(data), 'http://www.domain2.com');
+    };
+
+    // 接受domain2返回数据
+    window.addEventListener('message', function(e) {
+        alert('data from domain2 ---> ' + e.data);
+    }, false);
+</script>
+
+
+b.html：(www.domain2.com/b.html)
+<script>
+    // 接收domain1的数据
+    window.addEventListener('message', function(e) {
+        alert('data from domain1 ---> ' + e.data);
+        try{
+            var data = JSON.parse(e.data);
+            if (data) {
+                data.number = 16;
+                // 处理后再发回domain1
+                window.parent.postMessage(JSON.stringify(data), 'http://www.domain1.com');
+            }
+        }catch(e){}
+    }, false);
+</script>

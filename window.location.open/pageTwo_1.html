@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageTwo_1</title>
+</head>
+<body>
+    <h1 style="text-align: center">window.open打开新窗口并传递参数</h1>
+    <button name="BUTTON">点击走起！</button>
+</body>
+<script>
+    let button = document.getElementsByName('BUTTON')[0];
+    button.onclick = function () {
+        window.open(encodeURI('./pageTwo_2.html?passData=我就是传递过来的参数'))
+    }
+</script>
+</html>

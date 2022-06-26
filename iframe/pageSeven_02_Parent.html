@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageSeven_02_Parent</title>
+</head>
+<body>
+  <h1 style="text-align: center"> 父页面Parent的参数为： passData=我不不不不不是frame里的参数</h1>
+
+  <br>
+  <iframe src="./pageSeven_02_Child.html" width="800px"></iframe>
+</body>
+<script>
+  var passData = '我不不不不不是frame里的参数';
+
+  //向iframe子页面传参
+  function sendPassData() {
+    return passData;
+  }
+</script>
+</html>

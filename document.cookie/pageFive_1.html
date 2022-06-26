@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageFive_1</title>
+</head>
+<body>
+    <h1 style="text-align: center"> document.cookie 保存参数</h1>
+    <button class="BUTTON">点击去第二个页面看是否能获取cookie参数！</button>
+</body>
+<script>
+    document.cookie = encodeURI('passData=我就是传递过来的参数;max-age=60');
+
+    let button = document.getElementsByClassName('BUTTON')[0];
+    button.onclick = function () {
+        window.location.href = encodeURI('./pageFive_2.html')
+    }
+</script>
+</html>

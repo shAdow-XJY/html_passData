@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageSix_1</title>
+</head>
+<body>
+<h1 style="text-align: center"> window.localStorage 保存参数</h1>
+<button id="BUTTON">点击去第二个页面看是否能获取localStorage里的参数！</button>
+</body>
+<script>
+    if(window.localStorage){
+        window.localStorage.passData = '我就是传递过来的参数';
+    }
+
+    let button = document.getElementById('BUTTON');
+    button.onclick = function () {
+        window.location.href = encodeURI('./pageSix_2.html')
+    }
+</script>
+</html>

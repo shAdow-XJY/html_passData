@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageOne_1</title>
+</head>
+<body>
+    <h1 style="text-align: center">window.location.href带参数传递到PageOne_2</h1>
+    <button>点击走起!</button>
+</body>
+<script>
+    let button = document.getElementsByTagName("button")[0];
+    button.onclick = function () {
+        window.location.href = encodeURI('./pageOne_2.html?passData=我就是传递过来的数据');
+    }
+</script>
+</html>

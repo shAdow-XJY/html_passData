@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageSeven_01_Child</title>
+</head>
+<body>
+  <h1 style="text-align: center"> 子页面Child的参数为： passData=我就是frame里的参数</h1>
+</body>
+<script>
+  var passData = '我就是frame里的参数';
+  //向父页面传参
+  window.parent.getPassData(passData);
+</script>
+</html>

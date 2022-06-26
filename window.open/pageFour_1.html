@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageFour_1</title>
+</head>
+<body>
+    <h1 style="text-align: center">window.open 打开新页面</h1>
+    <button class="BUTTON">点击去第二个页面看是否能获取该页面参数！</button>
+</body>
+<script>
+    //改成let的话，pageFour_2的opener获取undefined
+    var passData = '我就是原页面里的一个参数';
+
+    let button = document.getElementsByClassName('BUTTON')[0];
+    button.onclick = function () {
+        window.open('./pageFour_2.html','_blank')
+    }
+</script>
+</html>

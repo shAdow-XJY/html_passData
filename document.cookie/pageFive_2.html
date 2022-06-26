@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageFive_2</title>
+</head>
+<body>
+  <h1 style="text-align: center"> cookie 获取参数</h1>
+  <button class="BUTTON">点击获取cookie参数！</button>
+</body>
+<script>
+  let passParam = getCookie('passData');
+  console.log(passParam);//passData=我就是传递过来的参数
+
+  let button = document.getElementsByClassName('BUTTON')[0];
+  button.onclick = function () {
+    alert(passParam.split('=')[1])
+  }
+
+  function getCookie(cookie_name) {
+
+    if(document.cookie.length > 0){
+      //检查这个cookie是否存在，不存在就为 -1
+      let cookie_index = document.cookie.indexOf(cookie_name+'=');
+
+      if(cookie_index !== -1){
+        //passData=我就是传递过来的参数;max-age=60;
+        //只需要获取 passData=我就是传递过来的参数; 就行
+        let cookie_endIndex = document.cookie.indexOf(';',cookie_index);
+        if(cookie_endIndex === -1){
+          cookie_endIndex = document.cookie.length;
+        }
+
+        return decodeURI(document.cookie.substring(cookie_index,cookie_endIndex));
+      }
+    }
+
+    return '';
+  }
+</script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageTwo_2</title>
+</head>
+<body>
+  <h1 style="text-align: center">document.URL接收参数</h1>
+  <button name="BUTTON">点击接收参数</button>
+</body>
+<script>
+  let param = decodeURI(document.URL);//?passData=我就是传递过来的参数
+  param = param.split('=')[1];
+  let button = document.getElementsByName('BUTTON')[0];
+  button.onclick = function () {
+    alert(param)
+  }
+</script>
+</html>

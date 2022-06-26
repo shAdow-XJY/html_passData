@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageSeven_01_Parent</title>
+</head>
+<body>
+  <h1 style="text-align: center"> iframe 子页面Child 获取 父页面Parent 的参数</h1>
+  <button id="BUTTON">点击接收Parent页面的参数！</button>
+</body>
+<script>
+  let passData = window.parent.sendPassData();
+
+  let button = document.getElementById('BUTTON');
+  button.onclick = function () {
+    alert(passData);
+  }
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageSeven_01_Parent</title>
+</head>
+<body>
+  <h1 style="text-align: center"> iframe 父页面Parent 获取 子页面Child 的参数</h1>
+  <button id="BUTTON">点击接收Child页面的参数！</button>
+
+  <br>
+  <iframe src="./pageSeven_01_Child.html" width="800px"></iframe>
+</body>
+<script>
+  let passData = '';
+
+  //iframe 里调用 parent.getPassData
+  function getPassData(iframeData) {
+    passData = iframeData;
+    console.log('iframe向本页面传值了');
+  }
+
+  let button = document.getElementById('BUTTON');
+  button.onclick = function () {
+    alert(passData);
+  }
+</script>
+</html>

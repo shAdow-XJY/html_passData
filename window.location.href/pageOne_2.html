@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageOne_2</title>
+</head>
+<body>
+    <h1 style="text-align: center">location.search接收pageOne_1传过来的参数</h1>
+    <button id="BUTTON">点击弹出接收参数</button>
+</body>
+<script>
+    var data = decodeURI(location.search);
+    console.log(data);//  ?passData=我就是传递过来的数据
+
+    data = data.slice(data.indexOf('=')+1);
+    console.log(data)
+
+    let button = document.getElementById('BUTTON');
+    button.onclick = function () {
+        alert(data)
+    };
+</script>
+</html>

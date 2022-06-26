@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PageSix_2</title>
+</head>
+<body>
+  <h1 style="text-align: center"> window.localStorage 获取参数</h1>
+  <button id="BUTTON">点击显示参数！</button>
+</body>
+<script>
+  let passParam = localStorage.getItem('passData');
+
+  let button = document.getElementById('BUTTON');
+  button.onclick = function () {
+    alert(passParam);
+  }
+</script>
+</html>
