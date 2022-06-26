@@ -1,5 +1,7 @@
 # html_passData
 
+## website
+  [https://shadowplusing.website/html_passData/](https://shadowplusing.website/html_passData/)
 ## introduction
 
   练习主要由HTML构成的页面的不同传参方法，写一个demo记录下，方便以后回顾。
